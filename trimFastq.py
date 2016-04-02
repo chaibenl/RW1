@@ -1,8 +1,8 @@
 #!/usr/bin/python
-#This trimming tool trim the Read Segment Quality Control indicator off the 3' end of the read on on standard Phred+33 scale: ASCII 33-71. The Read Segment Quality Control indicator is "#". (while Phred+66 starts with 'B')
+#This script trims off 3' end of Illuminia reads by Read Segment Quality Control indicator on standard Phred+33 scale: ASCII 33-71 (in which the Read Segment Quality Control indicator is designated as "#", while it is "B" on Phred+66 scale)
 import sys, string
 if len(sys.argv) != 3:
-	print 'Usage: trimFastq.py fastq minLength'
+	print 'Usage: trimFastq.py seq.fastq minLength[INT]'
 	sys.exit()
 
 f = open(sys.argv[1], 'r').read()#the fastq file
